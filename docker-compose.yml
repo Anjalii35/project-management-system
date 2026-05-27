@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  # MySQL Database
+  mysql:
+    image: mysql:8.0
+    container_name: pm-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: project_manager
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  # Spring Boot Backend
+  backend:
+    build: ./backend
+    container_name: pm-backend
+    ports:
+      - "8080:8080"
+    restart: on-failure
+    depends_on:
+      - mysql
+  
+  # React Frontend
+  frontend:
+    build: ./frontend
+    container_name: pm-frontend
+    ports: 
+      - "5173:5173"
+    restart: on-failure
+    depends_on:
+      - backend
+
+volumes:
+  mysql-data:
