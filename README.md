@@ -129,5 +129,5 @@ docker compose logs frontend
 project-management-app/
 ├── frontend/          # React + Vite app
 ├── backend/           # Spring Boot app
-└── docker-compose.yml # Container orchestration
+└── docker-compose.yml # Runs everything together
 ```
