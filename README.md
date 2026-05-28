@@ -29,7 +29,6 @@ It supports role-based access control, image uploads, pagination, and a clean mo
 - Assigned users can update task status
 
 ### 👤 Team Management
-- Admin can add and manage team members
 - Profile pictures supported for all users
 - Search team members by name
 
@@ -60,6 +59,23 @@ It supports role-based access control, image uploads, pagination, and a clean mo
 That's it — no Java, Node, or MySQL installation needed!
 
 ---
+## ⚡ Method 1 — Docker Hub (Easiest)
+> No source code needed — pulls pre-built images directly from Docker Hub!
+ 
+### 2️⃣ Download the compose file
+ 
+Download [docker-compose.hub.yml](https://raw.githubusercontent.com/Anjalii35/project-management-system/main/docker-compose.hub.yml) anywhere on your machine.
+
+---
+ 
+### 3️⃣ Launch
+```bash
+docker compose -f docker-compose.hub.yml up
+```
+Done in seconds! ✅
+ 
+---
+## 🔧 Method 2 — Build from Source
 
 ### 2️⃣ Clone the Repository
 
@@ -127,7 +143,8 @@ docker compose logs frontend
 
 ```
 project-management-app/
-├── frontend/          # React + Vite app
-├── backend/           # Spring Boot app
-└── docker-compose.yml # Runs everything together
+├── frontend/                <- React + Vite app
+├── backend/                 <- Spring Boot app
+├── docker-compose.hub.yml   <- pulls from Docker Hub (Hub way)
+└── docker-compose.yml       <- builds from source code (GitHub way)
 ```
